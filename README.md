@@ -1,27 +1,20 @@
 # Pokedex
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.9.
+## About
 
-## Development server
+I decided to create a simple sample app that displays a list of Pokémons. The data is fetched from the public [PokeAPI](https://pokeapi.co/). The API is open source and available on [GitHub](https://github.com/PokeAPI/pokeapi).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Technologies
 
-## Code scaffolding
+- Angular CLI 9.1.9
+- Typescript
+- CSS Grid
+- SCSS
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Dev Details
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- This project use a service to communicate with the pokemon api
+- The service needs to work with HTTP calls, for that we import HttpClientModule at our app.module.ts and at the service we import the HttpClient
+- Then we need to import at our data service and inject to our card list component constructor
+- at ngOninit we add a method to return the list of pokemons. Since we are returning from http client, it is an observable so we can subscribe to it
+- The card component is reusable
